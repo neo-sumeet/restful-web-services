@@ -12,9 +12,9 @@ public class UserService {
     private static List<User> userList = new ArrayList<>();
 
     static {
-        userList.add(new User("1","John", (new Date(80,1,12)).toInstant()));
-        userList.add(new User("2","John", (new Date(81,1,11)).toInstant()));
-        userList.add(new User("3","John", (new Date(82,1,10)).toInstant()));
+        userList.add(new User(1,"John", (new Date(80,1,12)).toInstant()));
+        userList.add(new User(2,"John", (new Date(81,1,11)).toInstant()));
+        userList.add(new User(3,"John", (new Date(82,1,10)).toInstant()));
     }
 
     private static int userCount = 3;
@@ -33,7 +33,7 @@ public class UserService {
 
     public void addUser(User user){
         if(user.getId() == null){
-            user.setId(String.valueOf(++userCount));
+            user.setId(++userCount);
         }
         userList.add(user);
     }
